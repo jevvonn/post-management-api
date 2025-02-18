@@ -52,3 +52,12 @@ func (p *PostUsecase) CreatePost(req *dto.CreatePostRequest) error {
 
 	return nil
 }
+
+func (p *PostUsecase) GetPostByID(id int) (domain.Post, error) {
+	post, err := p.postRepo.GetPostByID(id)
+	if err != nil {
+		return domain.Post{}, err
+	}
+
+	return post, nil
+}
