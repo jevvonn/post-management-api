@@ -7,7 +7,7 @@ services:
     environment:
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_USER=${DB_USER}
-      - POSTGRES_DB=${DB_DB}
+      - POSTGRES_DB=${DB_NAME}
     volumes:
       - app-data:/var/lib/postgresql/data
     networks:
