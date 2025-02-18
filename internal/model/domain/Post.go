@@ -18,6 +18,7 @@ type Post struct {
 	DeadlineBeforeRevision time.Time `gorm:"not null" json:"deadline_before_revision"`
 	DeadlineAfterRevision  time.Time `json:"deadline_after_revision,omitempty"`
 	UploadDate             time.Time `json:"upload_date,omitempty"`
+	Status                 string    `gorm:"type:enum('DRAFT','PUBLISHED');not null;default:'DRAFT'" json:"status"`
 
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
