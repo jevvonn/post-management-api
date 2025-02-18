@@ -2,14 +2,10 @@ package domain
 
 import (
 	"time"
-
-	"gorm.io/gorm"
 )
 
 type Post struct {
-	gorm.Model
-
-	ID                     uint      `gorm:"primaryKey;autoIncrement" json:"id,omitempty"`
+	ID                     uint      `gorm:"primaryKey;autoIncrement" json:"id"`
 	Title                  string    `gorm:"type:varchar(255);not null" json:"title"`
 	ContentDescription     string    `gorm:"type:text;not null;column:content_description" json:"content"`
 	Caption                string    `gorm:"type:text;not null" json:"caption"`
